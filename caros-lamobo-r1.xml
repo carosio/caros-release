@@ -3,29 +3,22 @@
 	<layer_declaration>
 
 		<remote baseurl="git://git.yoctoproject.org/" name="yocto" />
-		<remote baseurl="git://github.com/carosio/" name="github"/>
-		<remote baseurl="git://github.com/openembedded/" name="openembedded"/>
+		<remote baseurl="git://github.com/carosio/" name="carosio"/>
 		<remote baseurl="git://github.com/pokymobo/" name="pokymobo"/>
-		
+
 		<baselayer
 			repo="poky"
 			revision="refs/tags/fido-13.0.0"
 			remote="yocto" />
 
-		<layer name="meta-openembedded"
-			repo="meta-openembedded"
-			revision="10d3c8f85280a0bf867a8e4f84bcda81c290d28e"
-			subdirs="meta-oe meta-networking meta-python"
-			remote="openembedded" />
+		<layer name="meta-caros"
+			repo="meta-caros"
+			revision="be9f05934d6421c609cdeb16bb216c061e5acc56"
+			remote="carosio" />
 
 		<layer name="meta-lamobo-r1"
 			repo="meta-lamobo-r1"
 			revision="0d5d7ac4a43c5e35a30f480972c45981f2e8f542"
-			remote="pokymobo" />
-
-		<layer name="meta-caros"
-			repo="meta-caros"
-			revision="2cb2565dba65f590e5b26e760232dc215bc1d278"
 			remote="pokymobo" />
 
 	</layer_declaration>

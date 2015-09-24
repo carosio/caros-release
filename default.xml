@@ -7,17 +7,17 @@
 
 		<baselayer
 			repo="poky"
-			revision="refs/tags/dizzy-12.0.1"
+			revision="refs/tags/fido-13.0.0"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="44ddf6dbd03d4dae65de8a8d3de26f04e65b7553"
+			revision="be9f05934d6421c609cdeb16bb216c061e5acc56"
 			remote="github" />
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
-			revision="f8c7d45949ea4b8bd03c76d476979cb7e89b461d"
+			revision="b1cf081ed3ab271b67e4ac8199f91a431ec328df"
 			remote="github" />
 
 	</layer_declaration>
