@@ -2,30 +2,30 @@
 <redo>
 	<layer_declaration>
 
-		<remote baseurl="git://git.yoctoproject.org/" name="yocto" />
-		<remote baseurl="git://github.com/carosio/" name="carosio"/>
-		<remote baseurl="git://github.com/pokymobo/" name="pokymobo"/>
+		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
+		<remote baseurl="git://github.com/carosio/" name="carosio"   />
+		<remote baseurl="git://github.com/pokymobo/" name="pokymobo" />
 
 		<baselayer
 			repo="poky"
-			revision="refs/tags/fido-13.0.0"
+			revision="fa55b8e5050c6d7a47ef8e9bc213d0cc9471b43a"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="be9f05934d6421c609cdeb16bb216c061e5acc56"
+			revision="8a2515c0982486124730863480b5faaab3649ea1"
 			remote="carosio" />
 
 		<layer name="meta-lamobo-r1"
 			repo="meta-lamobo-r1"
-			revision="0d5d7ac4a43c5e35a30f480972c45981f2e8f542"
+			revision="8476d88b4e172047d0472038bbdcd9a211f6f046"
 			remote="pokymobo" />
 
 	</layer_declaration>
 
 	<local_conf>
 		<![CDATA[
-MACHINE ?= "sun7i-a20-lamobo-r1"
+MACHINE = "sun7i-a20-lamobo-r1"
 DISTRO = "caros"
 DL_DIR = "/REDO/download"
 ]]>

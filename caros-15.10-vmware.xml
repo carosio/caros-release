@@ -2,47 +2,46 @@
 <redo>
 	<layer_declaration>
 
-		<remote baseurl="git://git.yoctoproject.org/" name="yocto" />
-		<remote baseurl="git://github.com/carosio/" name="github"/>
+		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
+		<remote baseurl="git://github.com/carosio/" name="carosio"   />
 
 		<baselayer
 			repo="poky"
-			revision="refs/tags/fido-13.0.0"
+			revision="fa55b8e5050c6d7a47ef8e9bc213d0cc9471b43a"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="be9f05934d6421c609cdeb16bb216c061e5acc56"
-			remote="github" />
+			revision="8a2515c0982486124730863480b5faaab3649ea1"
+			remote="carosio" />
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
 			revision="b1cf081ed3ab271b67e4ac8199f91a431ec328df"
-			remote="github" />
+			remote="carosio" />
 
 	</layer_declaration>
 
 	<local_conf>
 		<![CDATA[
-		MACHINE = "vmware"
-		DISTRO = "caros"
-		DL_DIR = "/REDO/download"
-		]]>
+MACHINE = "vmware"
+DISTRO = "caros"
+DL_DIR = "/REDO/download"
+]]>
 	</local_conf>
 
 	<buildstage id="001-ubuntu">
 		<action>FROM ubuntu:14.04</action>
 		<action>RUN apt-get update</action>
 		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
-		<action>RUN mkdir /REDO</action>
-		<action>RUN mkdir /REDO/build</action>
 		<reposync />
 	</buildstage>
 
 	<buildstage id="002-build-core-image">
 		<prestage>001-ubuntu</prestage>
 		<reposync />
-		<action>RUN mkdir -p /REDO/download</action>
+		<action>RUN install -d /REDO/build</action>
+		<action>RUN install -d /REDO/download</action>
 		<bitbake_target>core-image-caros</bitbake_target>
 	</buildstage>
 </redo>
