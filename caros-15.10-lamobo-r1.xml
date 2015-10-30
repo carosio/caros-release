@@ -13,7 +13,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="8a2515c0982486124730863480b5faaab3649ea1"
+			revision="add99fd16272fcb02c18d37bec1370179c374bcc"
 			remote="carosio" />
 
 		<layer name="meta-lamobo-r1"
