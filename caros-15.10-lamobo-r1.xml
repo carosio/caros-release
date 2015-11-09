@@ -45,4 +45,10 @@ DL_DIR = "/REDO/download"
 		<action>RUN install -d /REDO/download</action>
 		<bitbake_target>core-image-caros</bitbake_target>
 	</buildstage>
+
+	<buildstage id="003-build-packages">
+		<prestage>002-build-core-image</prestage>
+		<reposync />
+		<bitbake_target>packagegroup-caros</bitbake_target>
+	</buildstage>
 </redo>
