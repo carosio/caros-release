@@ -15,7 +15,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="a70fb589f198eec26cf60ced6cd87aa50569318b"
+			revision="b1ec453d7bc2fcb096d4d12d55d65596d1f79166"
 			remote="thz" />
 
 		<layer name="meta-lamobo-r1"
@@ -40,7 +40,7 @@ DL_DIR = "/REDO/download"
 	</local_conf>
 
 	<buildstage id="001-ubuntu">
-		<action>FROM ubuntu:14.04</action>
+		<action>FROM ubuntu:14.04-cached</action>
 		<action>RUN apt-get update</action>
 		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
 		<reposync />
