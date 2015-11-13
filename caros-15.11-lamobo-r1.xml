@@ -15,7 +15,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="b1ec453d7bc2fcb096d4d12d55d65596d1f79166"
+			revision="9e26242b9d05737468cb16ce2c909935efadaedb"
 			remote="thz" />
 
 		<layer name="meta-lamobo-r1"
