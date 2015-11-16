@@ -4,8 +4,6 @@
 
 		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
 		<remote baseurl="git://github.com/carosio/" name="carosio"   />
-		<remote baseurl="git://github.com/pokymobo/" name="pokymobo" />
-		<remote baseurl="git://github.com/thz/" name="thz" />
 		<remote baseurl="git://github.com/openembedded/" name="openembedded"/>
 
 		<baselayer
@@ -15,13 +13,13 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="d016c5784e361dd79b1dd0ccb911f270518cd8a1"
-			remote="thz" />
+			revision="7c2cc27af543ba8e4a236fc860c345e39d1f3c99"
+			remote="carosio" />
 
 		<layer name="meta-lamobo-r1"
 			repo="meta-lamobo-r1"
 			revision="8476d88b4e172047d0472038bbdcd9a211f6f046"
-			remote="pokymobo" />
+			remote="carosio" />
 
 		<layer name="meta-openembedded"
 			repo="meta-openembedded"
@@ -40,7 +38,7 @@ DL_DIR = "/REDO/download"
 	</local_conf>
 
 	<buildstage id="001-ubuntu">
-		<action>FROM ubuntu:14.04-cached</action>
+		<action>FROM ubuntu:14.04</action>
 		<action>RUN apt-get update</action>
 		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
 		<reposync />
@@ -57,6 +55,11 @@ DL_DIR = "/REDO/download"
 	<buildstage id="003-build-packages">
 		<prestage>002-build-core-image</prestage>
 		<reposync />
+		<!--
+			 due to some cross-compilation issues on this target
+			 there is currently no support for the full packagegroup-caros
+			 set of packages.
+		 -->
 		<bitbake_target>packagegroup-caros-ansible-deps</bitbake_target>
 		<bitbake_target>packagegroup-caros-erlang</bitbake_target>
 		<bitbake_target>iptables</bitbake_target>

@@ -51,7 +51,7 @@ Checkout caros redomat xml files
 Build vmware images
 
 ~~~
- sudo redomat/redomat.py caros-release/caros-15.10-vmware.xml
+ sudo redomat/redomat.py caros-release/caros-15.11-vmware.xml
 ~~~
 
 Get the file
