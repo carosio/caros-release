@@ -58,7 +58,7 @@ Get the file
 
 ~~~
  docker images
- docker run --rm -ti -p <free_local_port>:80 <image ID from biggest images> /REDO/results/serve.sh
+ docker run --rm -ti -p <free_local_port>:80 <last built image ID> /REDO/results/serve.sh
 ~~~
  
  Use webbrowser for download
