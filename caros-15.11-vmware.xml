@@ -14,7 +14,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="9e26242b9d05737468cb16ce2c909935efadaedb"
+			revision="d016c5784e361dd79b1dd0ccb911f270518cd8a1"
 			remote="thz" />
 
 		<layer name="meta-vmware"

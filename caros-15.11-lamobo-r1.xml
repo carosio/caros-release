@@ -15,7 +15,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="9e26242b9d05737468cb16ce2c909935efadaedb"
+			revision="d016c5784e361dd79b1dd0ccb911f270518cd8a1"
 			remote="thz" />
 
 		<layer name="meta-lamobo-r1"
@@ -57,6 +57,8 @@ DL_DIR = "/REDO/download"
 	<buildstage id="003-build-packages">
 		<prestage>002-build-core-image</prestage>
 		<reposync />
-		<bitbake_target>packagegroup-caros</bitbake_target>
+		<bitbake_target>packagegroup-caros-ansible-deps</bitbake_target>
+		<bitbake_target>packagegroup-caros-erlang</bitbake_target>
+		<bitbake_target>iptables</bitbake_target>
 	</buildstage>
 </redo>
