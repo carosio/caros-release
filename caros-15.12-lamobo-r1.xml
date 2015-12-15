@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redo>
+	<layer_declaration>
+
+		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
+		<remote baseurl="git://github.com/carosio/" name="carosio"   />
+		<remote baseurl="git://github.com/openembedded/" name="openembedded"/>
+
+		<baselayer
+			repo="poky"
+			revision="aff2257e0b1153814aefc96737e00bdb4cf634e0"
+			remote="yocto" />
+
+		<layer name="meta-caros"
+			repo="meta-caros"
+			revision="7c2cc27af543ba8e4a236fc860c345e39d1f3c99"
+			remote="carosio" />
+
+		<layer name="meta-lamobo-r1"
+			repo="meta-lamobo-r1"
+			revision="8476d88b4e172047d0472038bbdcd9a211f6f046"
+			remote="carosio" />
+
+		<layer name="meta-openembedded"
+			repo="meta-openembedded"
+			revision="df2f700d66bace65f5d802225232d01cf511fe81"
+			subdirs="meta-oe meta-networking meta-python"
+			remote="openembedded" />
+
+		<layer name="meta-virtualization"
+			repo="meta-virtualization"
+			revision="0277cbcb47db4239d0a4aa3b37c5c6a705070951"
+			remote="yocto" />
+
+	</layer_declaration>
+
+	<local_conf>
+		<![CDATA[
+MACHINE = "sun7i-a20-lamobo-r1"
+DISTRO = "caros"
+DL_DIR = "/REDO/download"
+]]>
+	</local_conf>
+
+	<buildstage id="001-ubuntu">
+		<action>FROM ubuntu:14.04</action>
+		<action>RUN apt-get update</action>
+		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
+		<reposync />
+	</buildstage>
+
+	<buildstage id="002-build-core-image">
+		<prestage>001-ubuntu</prestage>
+		<reposync />
+		<action>RUN install -d /REDO/build</action>
+		<action>RUN install -d /REDO/download</action>
+		<bitbake_target>core-image-caros</bitbake_target>
+	</buildstage>
+
+	<buildstage id="003-build-packages">
+		<prestage>002-build-core-image</prestage>
+		<reposync />
+		<!--
+			 due to some cross-compilation issues on this target
+			 there is currently no support for the full packagegroup-caros
+			 set of packages.
+		 -->
+		<bitbake_target>packagegroup-caros-ansible-deps</bitbake_target>
+		<bitbake_target>packagegroup-caros-erlang</bitbake_target>
+		<bitbake_target>iptables</bitbake_target>
+	</buildstage>
+</redo>
