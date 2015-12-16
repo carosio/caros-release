@@ -13,7 +13,7 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="7c2cc27af543ba8e4a236fc860c345e39d1f3c99"
+			revision="eaddd10959cf8cb47af39d7b70fac42216e47cea"
 			remote="carosio" />
 
 		<layer name="meta-vmware"
