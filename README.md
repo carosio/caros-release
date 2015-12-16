@@ -51,7 +51,8 @@ Checkout caros redomat xml files
 Build vmware images
 
 ~~~
- redomat.py caros-release/caros-15.11-vmware.xml
+ redomat.py caros-release/caros-15.12-vmware.xml
+ redomat.py caros-release/caros-15.12-lamobo-r1.xml
 ~~~
 
 Get the file
