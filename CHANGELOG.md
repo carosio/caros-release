@@ -1,8 +1,11 @@
+CarOS 15.12 - Basketane
+=======================
+
 * security fixes from poky-upstream:
-	readline: CVE-2014-2524
-	openssh: CVE-2015-5600
-	unzip: CVE-2015-7696, CVE-2015-7697
-	libxslt: CVE-2015-7995
+	* readline: CVE-2014-2524
+	* openssh: CVE-2015-5600
+	* unzip: CVE-2015-7696, CVE-2015-7697
+	* libxslt: CVE-2015-7995
 
 * basic support for host based firewall (native tools + rule persistence)
 
