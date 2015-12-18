@@ -18,7 +18,7 @@
 
 		<layer name="meta-lamobo-r1"
 			repo="meta-lamobo-r1"
-			revision="8476d88b4e172047d0472038bbdcd9a211f6f046"
+			revision="0dcb85a5c8f25e3c179050ae68c25c40b72db4e6"
 			remote="carosio" />
 
 		<layer name="meta-openembedded"
