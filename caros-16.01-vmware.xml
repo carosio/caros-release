@@ -4,23 +4,22 @@
 
 		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
 		<remote baseurl="git://github.com/carosio/" name="carosio"   />
-		<remote baseurl="git://github.com/thz/" name="thz"   />
 		<remote baseurl="git://github.com/openembedded/" name="openembedded"/>
 
 		<baselayer
 			repo="poky"
-			revision="0073b234d793099a371b2e529f740987decce756"
+			revision="53b114b55f904de55ac37c01ea2929a8e3388de2"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="a1e383f7ac5284125c081ecfd9e19bb23d560a16"
-			remote="thz" />
+			revision="7a358f22410292b8e74effbf95acf193642fe981"
+			remote="carosio" />
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
-			revision="8379ce8ed8cabeb0bc862ea70dd136173bc68305"
-			remote="thz" />
+			revision="08a83b156497bb1c7923e525f5e3495023fefa20"
+			remote="carosio" />
 
 		<layer name="meta-openembedded"
 			repo="meta-openembedded"
@@ -44,7 +43,7 @@ DL_DIR = "/REDO/download"
 	</local_conf>
 
 	<buildstage id="010-ubuntu">
-		<action>FROM ubuntu:14.04-cached</action>
+		<action>FROM ubuntu:14.04</action>
 		<action>RUN apt-get update</action>
 		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
 		<reposync />
@@ -62,9 +61,11 @@ DL_DIR = "/REDO/download"
 		<bitbake_target>core-image-caros</bitbake_target>
 	</buildstage>
 
+<!--
 	<buildstage id="030-build-packages">
 		<prestage>020-build-core-image</prestage>
 		<reposync />
 		<bitbake_target>packagegroup-caros</bitbake_target>
 	</buildstage>
+-->
 </redo>
