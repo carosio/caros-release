@@ -14,12 +14,12 @@
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="a1e383f7ac5284125c081ecfd9e19bb23d560a16"
+			revision="4b05cdc3accafbbc0b0e655b6d297306df0ec3b3"
 			remote="thz" />
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
-			revision="8379ce8ed8cabeb0bc862ea70dd136173bc68305"
+			revision="53037bda48d5ccd5794f9e749e98be134c8e0e05"
 			remote="thz" />
 
 		<layer name="meta-openembedded"
