@@ -9,17 +9,17 @@
 
 		<baselayer
 			repo="poky"
-			revision="0073b234d793099a371b2e529f740987decce756"
+			revision="53b114b55f904de55ac37c01ea2929a8e3388de2"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="4b05cdc3accafbbc0b0e655b6d297306df0ec3b3"
+			revision="fa52bd8625da82d8c216856312182914e684a633"
 			remote="thz" />
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
-			revision="53037bda48d5ccd5794f9e749e98be134c8e0e05"
+			revision="08a83b156497bb1c7923e525f5e3495023fefa20"
 			remote="thz" />
 
 		<layer name="meta-openembedded"
@@ -62,9 +62,11 @@ DL_DIR = "/REDO/download"
 		<bitbake_target>core-image-caros</bitbake_target>
 	</buildstage>
 
+<!--
 	<buildstage id="030-build-packages">
 		<prestage>020-build-core-image</prestage>
 		<reposync />
 		<bitbake_target>packagegroup-caros</bitbake_target>
 	</buildstage>
+-->
 </redo>
