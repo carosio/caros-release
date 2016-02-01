@@ -46,7 +46,7 @@ DL_DIR = "/REDO/download"
 	<buildstage id="010-ubuntu">
 		<action>FROM ubuntu:14.04-cached</action>
 		<action>RUN apt-get update</action>
-		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
+		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs tmux libssl-dev</action>
 		<reposync />
 	</buildstage>
 
