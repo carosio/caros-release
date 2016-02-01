@@ -8,17 +8,17 @@
 
 		<baselayer
 			repo="poky"
-			revision="53b114b55f904de55ac37c01ea2929a8e3388de2"
+			revision="b9ad87b18fd7a664b8d5e385ffb09496c679036c"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="7a358f22410292b8e74effbf95acf193642fe981"
+			revision="48d68fe7508e475e6432bfaa097222b002c484b3"
 			remote="carosio" />
 
-		<layer name="meta-vmware"
-			repo="meta-vmware"
-			revision="08a83b156497bb1c7923e525f5e3495023fefa20"
+		<layer name="meta-lamobo-r1"
+			repo="meta-lamobo-r1"
+			revision="c278b33e068bb8220b890dab0f9cf4200b530370"
 			remote="carosio" />
 
 		<layer name="meta-openembedded"
@@ -36,7 +36,7 @@
 
 	<local_conf>
 		<![CDATA[
-MACHINE = "vmware"
+MACHINE = "sun7i-a20-lamobo-r1"
 DISTRO = "caros"
 DL_DIR = "/REDO/download"
 ]]>
