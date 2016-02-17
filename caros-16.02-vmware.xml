@@ -18,7 +18,7 @@
 
 		<layer name="meta-vmware"
 			repo="meta-vmware"
-			revision="08a83b156497bb1c7923e525f5e3495023fefa20"
+			revision="660db22222274058ac5a5c0de6fd9123398ff31e"
 			remote="carosio" />
 
 		<layer name="meta-openembedded"
