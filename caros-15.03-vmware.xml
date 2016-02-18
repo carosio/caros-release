@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redo>
+	<layer_declaration>
+
+		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
+		<remote baseurl="git://github.com/carosio/" name="carosio"   />
+
+		<baselayer
+			repo="poky"
+			revision="b38454c2e3a7a58f5397bb16d59e2b0aa71c4a94"
+			remote="yocto" /> <!-- dizzy-12.0.3 / yocto-1.7.3 -->
+
+		<layer name="meta-caros"
+			repo="meta-caros"
+			revision="056caf3a594469ff23a290ca7abe4f5a67275628"
+			remote="carosio" />
+
+		<layer name="meta-vmware"
+			repo="meta-vmware"
+			revision="f8c7d45949ea4b8bd03c76d476979cb7e89b461d"
+			remote="carosio" />
+
+	</layer_declaration>
+
+	<local_conf>
+		<![CDATA[
+MACHINE = "vmware"
+DISTRO = "caros"
+DL_DIR = "/REDO/download"
+]]>
+	</local_conf>
+
+	<buildstage id="001-ubuntu">
+		<action>FROM ubuntu:14.04</action>
+		<action>RUN apt-get update</action>
+		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs</action>
+		<reposync />
+	</buildstage>
+
+	<buildstage id="002-build-core-image">
+		<prestage>001-ubuntu</prestage>
+		<reposync />
+		<action>RUN install -d /REDO/build</action>
+		<action>RUN install -d /REDO/download</action>
+		<bitbake_target>core-image-caros</bitbake_target>
+	</buildstage>
+
+	<buildstage id="003-build-packages">
+		<prestage>002-build-core-image</prestage>
+		<reposync />
+		<bitbake_target>packagegroup-caros</bitbake_target>
+	</buildstage>
+</redo>
