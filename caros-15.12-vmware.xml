@@ -8,12 +8,12 @@
 
 		<baselayer
 			repo="poky"
-			revision="aff2257e0b1153814aefc96737e00bdb4cf634e0"
+			revision="06d9c894636352a6c93711c7284d02b0c794a527"
 			remote="yocto" />
 
 		<layer name="meta-caros"
 			repo="meta-caros"
-			revision="14068d937dd67d77be4272e7715c3e1824cac3fc"
+			revision="8809a9d4b13d4e894f8d7f92366781310a05ce6c"
 			remote="carosio" />
 
 		<layer name="meta-vmware"
