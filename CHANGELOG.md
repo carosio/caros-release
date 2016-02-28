@@ -31,6 +31,7 @@ CAROS 16.02
 ===========
 
 Upgrade note (for building brands):
+
 	* bitbake -c cleanall opkg opkg-native
 	  opkg changed the way packages are checksummed
 	* fixes from poky upstream:
