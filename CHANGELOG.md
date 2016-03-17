@@ -59,10 +59,14 @@ Upgrade note (for building brands):
 CAROS 16.03
 ===========
 
-This release is mainly focussing on updates. Mostly
+Abstract
+========
+
+This release is mainly focusing on updates. Mostly
 minor updates, but lots of them.
 
 Security Updates (from poky-upstream):
+======================================
 
   * openssl: Security fix CVE-2016-0800
   * qemu: Security fix CVE-2016-2198
@@ -74,6 +78,7 @@ Security Updates (from poky-upstream):
   * glibc: Security fix CVE-2015-7547
 
 Updates from meta-caros:
+========================
 
  * [erlang] OTP update -> 18.2.4 (faster parallel build)
  * [elixir] update -> 1.2.3
@@ -83,6 +88,7 @@ Updates from meta-caros:
  * [caros] new rebar class (easier erlang packaging)
  * [tcpdump] update -> 4.7.4
  * [zsh] update -> 5.2
+ * [journal-gateway-gelf] memleak fixes -> 1.0.3
  * [hello] update -> 3.2.0
  * [erlang-gen-socket] update -> v0.5
  * [erlang-gen-netlink] update -> v1.2
@@ -123,3 +129,4 @@ Updates from meta-caros:
  * add dnssd 0.9.0
  * [smem] add memory use reporting tool (1.5.0)
  * [libmnl] update to libmnl-1.0.3-35-g1891e0e
+
