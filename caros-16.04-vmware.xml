@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redo>
+	<layer_declaration>
+
+		<remote baseurl="git://git.yoctoproject.org/" name="yocto"   />
+		<remote baseurl="git://github.com/carosio/" name="carosio"   />
+		<remote baseurl="git://github.com/openembedded/" name="openembedded"/>
+
+		<baselayer
+			repo="poky"
+			revision="b1f23d1254682866236bfaeb843c0d8aa332efc2"
+			remote="yocto" />
+
+		<layer name="meta-caros"
+			repo="meta-caros"
+			revision="dd1ce0eebec03154a83192d0c73c2fc5aa4c5b08"
+			remote="carosio" />
+
+		<layer name="meta-vmware"
+			repo="meta-vmware"
+			revision="f39ee7e70bb589c5d760605534d06962a1fe3863"
+			remote="carosio" />
+
+		<layer name="meta-openembedded"
+			repo="meta-openembedded"
+			revision="c305ac5d2f5285d5eec8952a4ca7f3b4f89aed96"
+			subdirs="meta-oe meta-networking meta-python"
+			remote="openembedded" />
+		
+		<layer name="meta-virtualization"
+			repo="meta-virtualization"
+			revision="a4aa3e7852e40870f49f830f74c77366eb5a32f3"
+			remote="yocto" />
+
+	</layer_declaration>
+
+	<local_conf>
+		<![CDATA[
+MACHINE = "vmware"
+DISTRO = "caros"
+DL_DIR = "/REDO/download"
+]]>
+	</local_conf>
+
+	<buildstage id="010-ubuntu">
+		<action>FROM ubuntu:14.04</action>
+		<action>RUN apt-get update</action>
+		<action>RUN apt-get install -y subversion gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev vim sudo curl webfs tmux libssl-dev</action>
+		<reposync />
+	</buildstage>
+
+	<buildstage id="015-reposync">
+		<prestage>010-ubuntu</prestage>
+		<reposync />
+		<action>RUN install -d /REDO/build</action>
+		<action>RUN install -d /REDO/download</action>
+	</buildstage>
+
+	<buildstage id="020-build-core-image">
+		<prestage>015-reposync</prestage>
+		<bitbake_target>core-image-caros</bitbake_target>
+	</buildstage>
+
+	<buildstage id="030-build-packages">
+		<prestage>020-build-core-image</prestage>
+		<reposync />
+		<bitbake_target>packagegroup-caros</bitbake_target>
+	</buildstage>
+</redo>
