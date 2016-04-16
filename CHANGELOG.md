@@ -130,3 +130,18 @@ Updates from meta-caros:
  * [smem] add memory use reporting tool (1.5.0)
  * [libmnl] update to libmnl-1.0.3-35-g1891e0e
 
+CAROS 16.04
+===========
+
+Abstract
+========
+
+This release brings updates in the go-world.
+
+ChangeLog
+=========
+
+* updated: influxdb-0.12.1
+* added golang-1.6 and golang-1.5.3
+* kept golang-1.4.3 (bootstrap)
+
