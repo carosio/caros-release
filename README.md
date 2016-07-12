@@ -1,6 +1,6 @@
 # CarOS
 
-CarOS is a Linux-based OS distribution targetting carriers (thus the name). It provides modern infratructure for monitoring and logging, providing both, a run-time environment for distributed applications as well as virtualization and containerization.
+CarOS is a Linux-based OS distribution targeting carriers (thus the name). It provides modern infrastructure for monitoring and logging, providing both, a run-time environment for distributed applications as well as virtualization and containerization.
 
 CarOS release is rolling and has one announcement per month with release drop (image etc.)
 
