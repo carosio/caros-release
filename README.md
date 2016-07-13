@@ -68,4 +68,4 @@ Get the file
 
 CarOS research, development and evaluation has been partially supported by [FP7 UNIFY](http://www.fp7-unify.eu), a research project partially funded by the European Community under the Seventh Framework Program (grant agreement no. 619609).  The European Commission is not liable for any use that may be made of this code repository.
 
-The UNIFY consortium researches, develops and evaluates means to orchestrate, verify and observe end-to-end service delivery from home and enterprise networks through aggregation and core networks to data centres. The challanges addressed are under discussion also in the IRTF NFV RG; see [draft-unify-nfvrg-challenges](https://datatracker.ietf.org/doc/draft-unify-nfvrg-challenges/) for a summary.
+The UNIFY consortium researches, develops and evaluates means to orchestrate, verify and observe end-to-end service delivery from home and enterprise networks through aggregation and core networks to data centres. The challenges addressed are under discussion also in the IRTF NFV RG; see [draft-unify-nfvrg-challenges](https://datatracker.ietf.org/doc/draft-unify-nfvrg-challenges/) for a summary.
